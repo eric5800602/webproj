@@ -1,0 +1,43 @@
+<head></head>
+
+<body>
+	<script>
+
+		var ws = new WebSocket('ws://192.168.1.157:8764');
+		var ws2 = new WebSocket('ws://192.168.1.157:8765');
+		ws.onopen = function (evt) {
+			console.log("ws Connection open ...");
+			ws.send("0 1 1");
+
+		};
+		ws2.onopen = function (evt) {
+			console.log("ws2 Connection open ...");
+		};
+		var i = 0, j = 0;
+		ws2.onmessage = function (evt) {
+
+			if (i == 5) {
+				document.body.innerHTML = "";
+				i = 0;
+			}
+			i = i + 1;
+			document.write(evt.data + "<br>");
+			if (j % 50 == 0) {
+				ws.send("3 " + Math.floor((Math.random() * 4) + 1) + " 1");
+				console.log("f");
+			}
+			j = j + 1;
+
+
+			//ws.send("Hello WebSockts!");
+		};
+		//
+
+		//id type x y
+
+		ws.onclose = function (evt) {
+			console.log("Connection closed.");
+		};
+
+	</script>
+</body>
