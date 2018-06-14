@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#ul1 {position: absolute;left: 1300px;top: 30;width: 100 height: 30px;float: right;}
+		#ul2 {position: absolute;left: 1190px;top: 30;width: 100 height: 30px;float: right;}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="button" id="btn1" value="add a player">
+	<input type="button" id="btn2" value="remove a player">
+	<ul id="ul1">
+	</ul>
+	<ul id="ul2">
+	</ul>
+	<script type="text/javascript">
+		var oUl1 = document.getElementById('ul1');
+		var oUl2 = document.getElementById('ul2');
+		var oBtn1 = document.getElementById('btn1');
+		var oBtn2 = document.getElementById('btn2');
+		var oTxt1 = document.getElementById('txt1');
+		var oTxt2 = document.getElementById('txt2');
+		oBtn1.onclick = function(){
+			var aLi1 = document.createElement('li');
+			var aLi2 = document.createElement('li');
+			aLi1.innerHTML= oTxt1.value;
+			aLi2.innerHTML= oTxt2.value;
+			oUl1.appendChild(aLi1);
+			oUl2.appendChild(aLi2);
+			oTxt1.value='';
+			oTxt2.value='';
+		};
+		oBtn2.onclick = function(){
+			for(var i=0;i<oUl1.childNodes.length;i++){
+				if(oUl1.children[i].innerHTML==oTxt1.value){
+				oUl1.removeChild(oUl1.children[i]);
+				oUl2.removeChild(oUl2.children[i]);
+				break;
+				}
+			}
+			oTxt1.value='';
+			oTxt2.value='';
+			changeScore('andy',500);
+		};
+		function changeScore(name,score){
+			for(var i=0;i<oUl1.childNodes.length;i++){
+				if(oUl1.children[i].innerHTML==name){
+				oUl2.children[i].innerHTML=score;
+				break;
+				}
+			}
+		};
+	</script>
+</body>
+</html>
