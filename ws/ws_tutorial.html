@@ -1,0 +1,40 @@
+<head></head>
+
+<body>
+	<script>
+		// java script
+		// 因為我很無能 所以要分成兩個 web socket
+		// 這裡是取名 ws ws2 你可以依照自己的喜好取名沒關係 port 別弄錯就好
+		// ws 用於將資料從 client 傳給 server
+		// ws2 用於將資料從 server 傳給 client
+		var ws = new WebSocket('ws://140.116.250.16:8764');
+		var ws2 = new WebSocket('ws://140.116.250.16:8765');
+		ws.onopen = function (evt) {// ws.onopen 就代表 ws 順利連上 server 會做的事
+			console.log("ws Connection open ...");// 拜託不要在意他 他沒有作用
+			ws.send("2 0 1 1");// 傳送資料給 server，這可以放在其他你想放的地方 例如
+			/*
+				function sentMessage(){
+    				ws.send("2 0 1 1");
+				}
+			*/
+		};
+		ws2.onopen = function (evt) {
+			console.log("ws2 Connection open ...");
+		};
+
+		// ws2 是 client 端的接收口
+		// ws2.onmessage 就是當ws2接收到資料時會做的事
+		ws2.onmessage = function (evt) {
+			console.log(evt.data); //這裡利用 console.log 顯示收到的資料(evt.dat)
+		};
+
+
+		ws.onclose = function (evt) {// 斷線時會做的事
+			console.log("ws Connection closed.");
+		};
+		ws2.onclose = function (evt) {// 斷線時會做的事
+			console.log("ws2 Connection closed.");
+		};
+
+	</script>
+</body>

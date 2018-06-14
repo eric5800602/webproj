@@ -5,20 +5,20 @@
 using namespace std;
 FILE *r, *w;
 struct player {
-    int id, x, y;
-    player(int ID, int X, int Y) : id(ID), x(X), y(Y) {}
+    int id, type, x, y;
+    player(int ID, int TYPE, int X, int Y) : id(ID), type(TYPE), x(X), y(Y) {}
     player() {}
 };
 player data[1000];
 int main() {
     int i = 0;
     while (1) {
-        Sleep(34);
+        Sleep(100);
         r = fopen("in.txt", "r");
-        int a, b, c;
+        int id, type, x, y;
         system("cls");
-        while (~fscanf(r, "%d%d%d", &a, &b, &c)) {
-            cout << a << " " << b << " " << c << endl;
+        while (~fscanf(r, "%d%d%d%d", &id, &type, &x, &y)) {
+            prnintf("%d %d %d %d\n", id, type, x, y;)
         }
 
         // fclose(w);

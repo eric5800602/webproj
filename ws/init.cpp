@@ -13,7 +13,7 @@ player data[1000];
 int main() {
     int i = 0;
     int a, b, c, d, id, type, x, y;
-    while (cin >> id >> type >> x >> y) {
+    while (1) {
         r = fopen("in.txt", "r");
         while (~fscanf(r, "%d%d%d%d", &a, &b, &c, &d)) {
             data[a] = player(a, b, c, d);
@@ -26,6 +26,7 @@ int main() {
         }
         fclose(w);
         fclose(r);
+        Sleep(100);
     }
 
     return 0;
