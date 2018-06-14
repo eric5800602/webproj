@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#bg1 { width: 1500px;height: 700px; display: none;position: relative;}
+		#bg2 { width: 1500px;height: 700px; display: none;position: relative;}
+		#bg3 { width: 1500px;height: 700px; display: none;position: relative;}
+		#btn1 {width: 100px;height: 50px;float: left;}
+		#btn2 {width: 100px;height: 50px;float: left;}
+		#btn3 {width: 100px;height: 50px;float: left;}
+		#rock1{position: absolute;left: 200px;top: 50px;}
+		#rock2{position: absolute;left: 500px;top: 300px;}
+		#rock3{position: absolute;left: 750px;top: 100px;}
+		#rock4{position: absolute;left: 900px;top: 400px;}
+		#wood1{position: absolute;left: 400px;top: 50px;}
+		#wood2{position: absolute;left: 250px;top: 450px;}
+		#wood3{position: absolute;left: 875px;top: 100px;}
+		#wood4{position: absolute;left: 1000px;top: 450px;}
+		#wall1{position: absolute;left: 150px;top: 100px;}
+		#wall2{position: absolute;left: 150px;top: 500px;}
+		#wall3{position: absolute;left: 500px;top: 100px;}
+		#wall4{position: absolute;left: 850px;top:350px;}
+	</style>
+</head>
+<body>
+	<div id="bg1">
+		<div id="rock1">
+			<img src="./rock.jpg" width="100px" height="300px">
+		</div>
+		<div id="rock2">
+			<img src="./rock.jpg" width="300px" height="100px">
+		</div>
+		<div id="rock3">
+			<img src="./rock.jpg" width="300px" height="100px">
+		</div>
+		<div id="rock4">
+			<img src="./rock.jpg" width="100px" height="200px">
+		</div>
+		<img src="./grass.jpg" width="1200px" height="700px">
+	</div>
+	<div id="bg2">
+		<div id="wood1">
+			<img src="./wood.jpg" width="150px" height="150px">
+		</div>
+		<div id="wood2">
+			<img src="./wood.jpg" width="150px" height="150px">
+		</div>
+		<div id="wood3">
+			<img src="./wood.jpg" width="150px" height="250px">
+		</div>
+		<div id="wood4">
+			<img src="./wood.jpg" width="100px" height="200px">
+		</div>
+		<img src="./forest.png" width="1200px" height="700px">
+	</div>
+	<div id="bg3">
+		<div id="wall1">
+			<img src="./wall.jpg" width="150px" height="300px">
+		</div>
+		<div id="wall2">
+			<img src="./wall.jpg" width="500px" height="150px">
+		</div>
+		<div id="wall3">
+			<img src="./wall.jpg" width="500px" height="150px">
+		</div>
+		<div id="wall4">
+			<img src="./wall.jpg" width="150px" height="300px">
+		</div>
+		<img src="./canyon.jpg" width="1200px" height="700px">
+	</div>
+	<input type="button" id="btn1" value="plain">
+	<input type="button" id="btn2" value="forest">
+	<input type="button" id="btn3" value="canyon">
+	<script type="text/javascript">
+		var oBtn1 = document.getElementById('btn1');
+		var oBtn2 = document.getElementById('btn2');
+		var oBtn3 = document.getElementById('btn3');
+		var oBg1 = document.getElementById('bg1');
+		var oBg2 = document.getElementById('bg2');
+		var oBg3 = document.getElementById('bg3');
+		var oRock1 = document.getElementById('rock1');
+		var oRock2 = document.getElementById('rock2');
+		var oRock3 = document.getElementById('rock3');
+		var oRock4 = document.getElementById('rock4');
+		var oWood1 = document.getElementById('wood1');
+		var oWood2 = document.getElementById('wood2');
+		var oWood3 = document.getElementById('wood3');
+		var oWood4 = document.getElementById('wood4');
+		var oWall1 = document.getElementById('wall1');
+		var oWall2 = document.getElementById('wall2');
+		var oWall3 = document.getElementById('wall3');
+		var oWall4 = document.getElementById('wall4');
+
+		oBtn1.onclick = function(){
+			oBg1.style.display = "block";
+		};
+		oBtn2.onclick = function(){
+			oBg2.style.display = "block";
+		};
+		oBtn3.onclick = function(){
+			oBg3.style.display = "block";
+		};
+	</script>
+</body>
+</html>
